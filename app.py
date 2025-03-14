@@ -1,5 +1,6 @@
 from flask import Flask, request, render_template
 import os
+from waitress import serve
 
 app = Flask(__name__)
 
@@ -21,5 +22,6 @@ def upload_file():
 
         return f"Car Model: {car_model} | Car Color: {car_color}"
 
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+    # Start the app using Waitress server for local development
+    serve(app, host='0.0.0.0', port=5000)
