@@ -23,5 +23,6 @@ def upload_file():
         return f"Car Model: {car_model} | Car Color: {car_color}"
 
 if __name__ == "__main__":
+    app.run(debug=True)
     # Start the app using Waitress server for local development
     serve(app, host='0.0.0.0', port=5000)
